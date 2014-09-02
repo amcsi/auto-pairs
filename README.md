@@ -67,19 +67,7 @@ Features
         input: |[foo, bar()] (press (<M-e> at |)
         output: ([foo, bar()])
 
-*   Quick jump to closed pair.
-
-        input:
-        {
-            something;|
-        }
-
-        (press } at |)
-
-        output:
-        {
-
-        }|
+*   Quick jump to closed pair. This functionality was removed by amcsi. Awaiting an config option for this from the original creator of this vim plugin.
 
 *   Support ``` ''' and """
 

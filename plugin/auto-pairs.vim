@@ -102,22 +102,7 @@ function! AutoPairsInsert(key)
       return "\<Right>"
     end
 
-    if !g:AutoPairsFlyMode
-      " Skip the character if next character is space
-      if current_char == ' ' && next_char == a:key
-        return "\<Right>\<Right>"
-      end
-
-      " Skip the character if closed pair is next character
-      if current_char == ''
-        let next_lineno = line('.')+1
-        let next_line = getline(nextnonblank(next_lineno))
-        let next_char = matchstr(next_line, '\s*\zs.')
-        if next_char == a:key
-          return "\<ESC>e^a"
-        endif
-      endif
-    endif
+    "Removed "Quick jump to closed pair" functionality
 
     " Fly Mode, and the key is closed-pairs, search closed-pair and jump
     if g:AutoPairsFlyMode && has_key(b:AutoPairsClosedPairs, a:key)
